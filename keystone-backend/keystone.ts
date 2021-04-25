@@ -3,6 +3,7 @@ import { config, createSchema } from '@keystone-next/keystone/schema';
 import { createAuth } from '@keystone-next/auth';
 import User from './models/User';
 import Project from './models/Project';
+import ProjectImage from './models/ProjectImage';
 import { withItemData, statelessSessions } from '@keystone-next/keystone/session';
 
 const DB_URL = process.env.DB_URL;
@@ -39,6 +40,7 @@ export default withAuth(
 		lists: createSchema({
 			User,
 			Project,
+         ProjectImage
 		}),
 		ui: {
 			isAccessAllowed: ({ session }) => {
